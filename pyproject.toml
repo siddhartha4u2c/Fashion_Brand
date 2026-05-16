@@ -12,5 +12,7 @@ dependencies = [
     "langchain-openai>=1.2.1",
     "langgraph>=1.1.5",
     "langgraph-checkpoint-sqlite>=3.0.3",
+    "pdfminer>=20191125",
+    "pdfminer-six>=20260107",
     "python-dotenv>=1.2.2",
 ]
