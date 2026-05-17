@@ -7,12 +7,17 @@ requires-python = ">=3.12"
 dependencies = [
     "chromadb>=1.5.8",
     "ddgs>=9.14.2",
+    "faiss-cpu>=1.13.2",
     "langchain-community>=0.4.1",
+    "langchain-experimental>=0.4.1",
     "langchain-google-genai>=4.2.2",
     "langchain-openai>=1.2.1",
+    "langchain-opentutorial>=0.0.9",
     "langgraph>=1.1.5",
     "langgraph-checkpoint-sqlite>=3.0.3",
+    "matplotlib>=3.10.9",
     "pdfminer>=20191125",
     "pdfminer-six>=20260107",
+    "pypdf>=6.11.0",
     "python-dotenv>=1.2.2",
 ]
