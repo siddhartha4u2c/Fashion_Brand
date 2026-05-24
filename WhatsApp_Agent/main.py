@@ -18,6 +18,10 @@ llm = ChatOpenAI(
     max_tokens=2000
 )
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 @app.post("/whatsapp/webhook")
 async def whatsapp_webhook(request: Request):
     form_data = await request.form()

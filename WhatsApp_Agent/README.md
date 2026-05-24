@@ -34,8 +34,14 @@ WhatsApp → Twilio → ngrok → FastAPI → Groq → WhatsApp
 
 curl -X POST http://127.0.0.1:8000/whatsapp/webhook \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "Body=Hello from curl&From=whatsapp:+919999999999"
+  -d "Body=Hello from curl&From=whatsapp:+14155238886"
 
+```
+
+```
+curl -X POST https://felicita-unwatery-pseudogenerically.ngrok-free.dev/whatsapp/webhook \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "Body=Hello from curl&From=whatsapp:+14155238886"
 ```
 
 ### Architecture
