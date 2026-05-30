@@ -65,7 +65,6 @@ Known user context:
 {memory}
 
 Use this information naturally.
-Avoid generic responses.
 Be concise and practical.
 """
 

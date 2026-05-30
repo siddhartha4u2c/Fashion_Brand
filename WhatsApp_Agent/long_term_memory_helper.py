@@ -13,7 +13,7 @@ from embedding_setup import get_gemini_embedding_model
 # Config
 # -----------------------------
 MONGODB_URI = os.getenv("MONGODB_URI")
-DB_NAME = "whatsapp_bot"
+DB_NAME = "whatsapp_bot_long_term_memory_db"
 COLLECTION_NAME = "long_term_memory"
 
 # -----------------------------
