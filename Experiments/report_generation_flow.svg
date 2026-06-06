@@ -1,0 +1,402 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 750" width="100%" height="100%" style="background-color: #F8FAFC; font-family: system-ui, -apple-system, sans-serif;">
+  <!-- Definitions for Gradients, Shadows, and Markers -->
+  <defs>
+    <!-- Soft Drop Shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.06" />
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#0F172A" flood-opacity="0.04" />
+    </filter>
+
+    <!-- Node Gradients -->
+    <linearGradient id="planner-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#DBEAFE" />
+    </linearGradient>
+    <linearGradient id="tool-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5FF" />
+      <stop offset="100%" stop-color="#E9D5FF" />
+    </linearGradient>
+    <linearGradient id="writer-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0FDF4" />
+      <stop offset="100%" stop-color="#DCFCE7" />
+    </linearGradient>
+    <linearGradient id="format-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="final-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF7ED" />
+      <stop offset="100%" stop-color="#FFEDD5" />
+    </linearGradient>
+    <linearGradient id="input-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF2F2" />
+      <stop offset="100%" stop-color="#FEE2E2" />
+    </linearGradient>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748B" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#3B82F6" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10B981" />
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#F97316" />
+    </marker>
+    <marker id="arrow-yellow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#EAB308" />
+    </marker>
+  </defs>
+
+  <!-- ================= BACKGROUND GRID (Subtle) ================= -->
+  <g opacity="0.03">
+    <path d="M 0,50 L 1220,50 M 0,100 L 1220,100 M 0,150 L 1220,150 M 0,200 L 1220,200 M 0,250 L 1220,250 M 0,300 L 1220,300 M 0,350 L 1220,350 M 0,400 L 1220,400 M 0,450 L 1220,450 M 0,500 L 1220,500 M 0,550 L 1220,550 M 0,600 L 1220,600 M 0,650 L 1220,650 M 0,700 L 1220,700" stroke="#0F172A" stroke-width="1" />
+    <path d="M 50,0 L 50,750 M 100,0 L 100,750 M 150,0 L 150,750 M 200,0 L 200,750 M 250,0 L 250,750 M 300,0 L 300,750 M 350,0 L 350,750 M 400,0 L 400,750 M 450,0 L 450,750 M 500,0 L 500,750 M 550,0 L 550,750 M 600,0 L 600,750 M 650,0 L 650,750 M 700,0 L 700,750 M 750,0 L 750,750 M 800,0 L 800,750 M 850,0 L 850,750 M 900,0 L 900,750 M 950,0 L 950,750 M 1000,0 L 1000,750 M 1050,0 L 1050,750 M 1100,0 L 1100,750 M 1150,0 L 1150,750" stroke="#0F172A" stroke-width="1" />
+  </g>
+
+  <!-- ================= TOP HEADER (INPUT & MAIN ROW) ================= -->
+
+  <!-- INPUT BOX -->
+  <g transform="translate(340, 15)" filter="url(#shadow)">
+    <rect width="240" height="80" rx="12" fill="url(#input-grad)" stroke="#F87171" stroke-width="1.5" />
+    <text x="12" y="22" font-size="10" font-weight="800" fill="#991B1B" letter-spacing="1">INPUT</text>
+    
+    <!-- Topic Sub-Item -->
+    <g transform="translate(15, 32)">
+      <circle cx="16" cy="16" r="14" fill="#FFFFFF" stroke="#EF4444" stroke-width="1" />
+      <!-- Lightbulb Icon -->
+      <path d="M16 8a5 5 0 0 0-5 5c0 1.7.9 3.2 2.2 4.1.5.3.8.9.8 1.5v1a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1c0-.6.3-1.2.8-1.5A5 5 0 0 0 16 8zm-2 16h4v-1h-4v1z" fill="#EF4444" />
+      <text x="36" y="20" font-size="11" font-weight="700" fill="#1E293B">Topic</text>
+    </g>
+
+    <!-- Default Template Sub-Item -->
+    <g transform="translate(115, 32)">
+      <rect x="2" y="2" width="24" height="28" rx="4" fill="#FFFFFF" stroke="#EF4444" stroke-width="1" />
+      <!-- Doc Lines -->
+      <line x1="8" y1="10" x2="20" y2="10" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="8" y1="16" x2="20" y2="16" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="8" y1="22" x2="16" y2="22" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" />
+      <text x="36" y="20" font-size="11" font-weight="700" fill="#1E293B">Template</text>
+    </g>
+  </g>
+
+  <!-- REPORT PLANNER -->
+  <g transform="translate(340, 135)" filter="url(#shadow)">
+    <rect width="220" height="90" rx="12" fill="url(#planner-grad)" stroke="#3B82F6" stroke-width="2" />
+    <!-- OpenAI Logo Placeholder -->
+    <g transform="translate(15, 25)" color="#1E3A8A">
+      <path d="M24 16.2c.3-.6.5-1.2.5-1.9 0-2-1.6-3.6-3.6-3.6-.9 0-1.6.3-2.2.9-.2-.7-.8-1.3-1.5-1.7-1.4-.8-3.2-.8-4.6 0-.7.4-1.3 1-1.5 1.7-.6-.6-1.4-.9-2.2-.9-2 0-3.6 1.6-3.6 3.6 0 .7.2 1.4.6 1.9-.6.3-1 .8-1.4 1.4-.8 1.4-.8 3.2 0 4.6.3.6.8 1.1 1.4 1.4-.3.6-.6 1.2-.6 1.9 0 2 1.6 3.6 3.6 3.6.9 0 1.6-.3 2.2-.9.2.7.8 1.3 1.5 1.7.8.4 1.6.6 2.5.6.8 0 1.6-.2 2.2-.6.7-.4 1.3-1 1.5-1.7.6.6 1.4.9 2.2.9 2 0 3.6-1.6 3.6-3.6 0-.7-.2-1.4-.6-1.9.6-.3 1-.8 1.4-1.4.8-1.4.8-3.2 0-4.6-.3-.6-.8-1.1-1.4-1.4zm-7.4 7.5c-.5.2-1 .4-1.5.4-1.2 0-2.2-.8-2.6-1.8l.1-.1 4.3-2.5c.2-.1.4-.4.4-.7v-5l1.5.9c.7.4 1.1 1.2 1.1 2v5c.1.9-.5 1.6-1.3 1.9zm-5.5-1.5l-4.3-2.5c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.1 0 .4 0 .5 0zm-.7-10.7c.5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8l-.1.1-4.3 2.5c-.2.1-.4.4-.4.7v5l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2zm9.8 3l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.2 0 .3 0 .4 0zm3 7.7l-4.3 2.5c-.2.1-.5.1-.6 0l-4.3-2.5v-5c0-.2.1-.5.4-.6l4.3-2.5c.2-.1.5-.1.6 0l4.3 2.5v5c0 .2-.1.5-.4.6zm-1.4-10.7l4.3 2.5c.7.4 1.1 1.2 1.1 2v5c0 .9-.5 1.6-1.3 2-.5.2-1 .4-1.5 .4-1.2 0-2.2-.8-2.6-1.8v-5c0-.2.1-.5.4-.6l4.3-2.5z" fill="currentColor"/>
+    </g>
+    <text x="60" y="38" font-size="11" font-weight="700" fill="#2563EB">OpenAI GPT-4o</text>
+    <text x="60" y="60" font-size="14" font-weight="800" fill="#1E3A8A" letter-spacing="0.5">REPORT PLANNER</text>
+  </g>
+
+  <!-- WEB SEARCH TOOL (TOP) -->
+  <g transform="translate(590, 150)" filter="url(#shadow)">
+    <rect width="110" height="60" rx="12" fill="url(#tool-grad)" stroke="#8B5CF6" stroke-width="1.5" />
+    <!-- Search / Globe Icon -->
+    <path d="M24 16a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm-7 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6zm11 4.5l3.5 3.5-1.5 1.5-3.5-3.5 1.5-1.5z" fill="#6B21A8" transform="translate(-10, -10)" opacity="0.3" />
+    <path d="M17.5 12.5a5 5 0 1 1-5 5 5 5 0 0 1 5-5zm0 1a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm4 6.5l2.5 2.5-1 1-2.5-2.5 1-1z" fill="#6B21A8" transform="translate(10, 5)" />
+    <text x="12" y="42" font-size="10" font-weight="800" fill="#6B21A8" letter-spacing="0.5">WEB SEARCH</text>
+  </g>
+
+  <!-- FINAL REPORT -->
+  <g transform="translate(730, 135)" filter="url(#shadow)">
+    <rect width="100" height="90" rx="12" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5" />
+    <!-- Doc Icon -->
+    <g transform="translate(35, 15)">
+      <path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v36a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" fill="#F1F5F9" stroke="#475569" stroke-width="1.5" />
+      <line x1="5" y1="8" x2="19" y2="8" stroke="#94A3B8" stroke-width="2" />
+      <line x1="5" y1="14" x2="19" y2="14" stroke="#94A3B8" stroke-width="2" />
+      <line x1="5" y1="20" x2="19" y2="20" stroke="#94A3B8" stroke-width="2" />
+      <line x1="5" y1="26" x2="15" y2="26" stroke="#94A3B8" stroke-width="2" />
+    </g>
+    <text x="50" y="75" font-size="10" font-weight="800" fill="#334155" text-anchor="middle">FINAL REPORT</text>
+  </g>
+
+  <!-- COMPILE FINAL REPORT -->
+  <g transform="translate(860, 135)" filter="url(#shadow)">
+    <rect width="180" height="90" rx="12" fill="url(#planner-grad)" stroke="#3B82F6" stroke-width="1.5" />
+    <!-- Compilation Stack Icon -->
+    <g transform="translate(20, 30)" fill="none" stroke="#2563EB" stroke-width="1.5">
+      <rect x="0" y="4" width="16" height="20" rx="2" fill="#EFF6FF" />
+      <rect x="6" y="0" width="16" height="20" rx="2" fill="#DBEAFE" />
+      <line x1="10" y1="6" x2="18" y2="6" />
+      <line x1="10" y1="10" x2="18" y2="10" />
+    </g>
+    <text x="52" y="42" font-size="10" font-weight="800" fill="#1D4ED8">COMPILE</text>
+    <text x="52" y="58" font-size="13" font-weight="800" fill="#1E3A8A">FINAL REPORT</text>
+  </g>
+
+
+  <!-- ================= LEFT COLUMN (CUSTOM SECTIONS TEMPLATE) ================= -->
+  
+  <g transform="translate(20, 110)">
+    <!-- Main Yellow Border Box -->
+    <rect width="280" height="465" rx="12" fill="#FEFDF0" stroke="#EAB308" stroke-dasharray="6,4" stroke-width="2" filter="url(#shadow)" />
+    <text x="15" y="30" font-size="11" font-weight="800" fill="#854D0E" letter-spacing="0.5">REPORT TEMPLATE</text>
+    <text x="15" y="48" font-size="10" font-weight="700" fill="#A16207" letter-spacing="0.5">WITH CUSTOM SECTIONS</text>
+
+    <!-- SECTION ITEMS -->
+    <!-- Introduction (Orange hex/pill shape) -->
+    <g transform="translate(20, 75)">
+      <rect width="240" height="40" rx="8" fill="#FFF7ED" stroke="#F97316" stroke-width="1.5" />
+      <text x="20" y="24" font-size="11" font-weight="700" fill="#C2410C">INTRODUCTION</text>
+    </g>
+
+    <!-- Section 1 (Green hex/pill shape) -->
+    <g transform="translate(20, 135)">
+      <rect width="240" height="40" rx="8" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5" />
+      <text x="20" y="24" font-size="11" font-weight="700" fill="#15803D">SECTION 1</text>
+    </g>
+
+    <!-- Section 2 (Green hex/pill shape) -->
+    <g transform="translate(20, 195)">
+      <rect width="240" height="40" rx="8" fill="#F0FDF4" stroke="#22C55E" stroke-width="1.5" />
+      <text x="20" y="24" font-size="11" font-weight="700" fill="#15803D">SECTION 2</text>
+    </g>
+
+    <!-- Dot Dot Dot -->
+    <text x="140" y="275" font-size="24" font-weight="800" fill="#94A3B8" text-anchor="middle">. . .</text>
+
+    <!-- Conclusion (Orange hex/pill shape) -->
+    <g transform="translate(20, 305)">
+      <rect width="240" height="40" rx="8" fill="#FFF7ED" stroke="#F97316" stroke-width="1.5" />
+      <text x="20" y="24" font-size="11" font-weight="700" fill="#C2410C">CONCLUSION</text>
+    </g>
+  </g>
+
+
+  <!-- ================= CENTER BLOCK (PARALLEL EXECUTION OF SECTION WRITER) ================= -->
+
+  <!-- Green Stacked Containers -->
+  <!-- Layer 3 (Background offset) -->
+  <rect x="350" y="260" width="610" height="210" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.4" />
+  <!-- Layer 2 (Middle offset) -->
+  <rect x="345" y="255" width="610" height="210" rx="12" fill="#F0FDF4" stroke="#86EFAC" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7" />
+  
+  <!-- Main Layer 1 Container -->
+  <g transform="translate(340, 250)" filter="url(#shadow)">
+    <rect width="610" height="210" rx="12" fill="#F0FDF4" stroke="#22C55E" stroke-width="2" stroke-dasharray="6,4" />
+    <text x="20" y="28" font-size="11" font-weight="800" fill="#166534" letter-spacing="1">PARALLEL EXECUTION OF SECTION WRITER</text>
+
+    <!-- Web Search Tool Box -->
+    <g transform="translate(20, 60)">
+      <rect width="110" height="85" rx="10" fill="url(#tool-grad)" stroke="#8B5CF6" stroke-width="1.5" />
+      <!-- Search Icon -->
+      <path d="M12.5 7.5A5 5 0 1 1 7.5 12.5 5 5 0 0 1 12.5 7.5zm0 1a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm4 6.5l2.5 2.5-1 1-2.5-2.5 1-1z" fill="#6B21A8" transform="translate(35, 10)" />
+      <text x="55" y="55" font-size="9" font-weight="800" fill="#5B21B6" text-anchor="middle" letter-spacing="0.5">WEB SEARCH</text>
+      <text x="55" y="68" font-size="9" font-weight="800" fill="#5B21B6" text-anchor="middle" letter-spacing="0.5">TOOL</text>
+    </g>
+
+    <!-- RESEARCHER (LLM Node) -->
+    <g transform="translate(180, 60)">
+      <rect width="170" height="85" rx="10" fill="url(#planner-grad)" stroke="#3B82F6" stroke-width="1.5" />
+      <!-- OpenAI Logo -->
+      <g transform="translate(15, 22)" color="#1E3A8A" scale="0.8">
+        <path d="M24 16.2c.3-.6.5-1.2.5-1.9 0-2-1.6-3.6-3.6-3.6-.9 0-1.6.3-2.2.9-.2-.7-.8-1.3-1.5-1.7-1.4-.8-3.2-.8-4.6 0-.7.4-1.3 1-1.5 1.7-.6-.6-1.4-.9-2.2-.9-2 0-3.6 1.6-3.6 3.6 0 .7.2 1.4.6 1.9-.6.3-1 .8-1.4 1.4-.8 1.4-.8 3.2 0 4.6.3.6.8 1.1 1.4 1.4-.3.6-.6 1.2-.6 1.9 0 2 1.6 3.6 3.6 3.6.9 0 1.6-.3 2.2-.9.2.7.8 1.3 1.5 1.7.8.4 1.6.6 2.5.6.8 0 1.6-.2 2.2-.6.7-.4 1.3-1 1.5-1.7.6.6 1.4.9 2.2.9 2 0 3.6-1.6 3.6-3.6 0-.7-.2-1.4-.6-1.9.6-.3 1-.8 1.4-1.4.8-1.4.8-3.2 0-4.6-.3-.6-.8-1.1-1.4-1.4zm-7.4 7.5c-.5.2-1 .4-1.5.4-1.2 0-2.2-.8-2.6-1.8l.1-.1 4.3-2.5c.2-.1.4-.4.4-.7v-5l1.5.9c.7.4 1.1 1.2 1.1 2v5c.1.9-.5 1.6-1.3 1.9zm-5.5-1.5l-4.3-2.5c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.1 0 .4 0 .5 0zm-.7-10.7c.5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8l-.1.1-4.3 2.5c-.2.1-.4.4-.4.7v5l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2zm9.8 3l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.2 0 .3 0 .4 0zm3 7.7l-4.3 2.5c-.2.1-.5.1-.6 0l-4.3-2.5v-5c0-.2.1-.5.4-.6l4.3-2.5c.2-.1.5-.1.6 0l4.3 2.5v5c0 .2-.1.5-.4.6zm-1.4-10.7l4.3 2.5c.7.4 1.1 1.2 1.1 2v5c0 .9-.5 1.6-1.3 2-.5.2-1 .4-1.5 .4-1.2 0-2.2-.8-2.6-1.8v-5c0-.2.1-.5.4-.6l4.3-2.5z" fill="currentColor"/>
+      </g>
+      <text x="50" y="30" font-size="9" font-weight="700" fill="#2563EB">OpenAI GPT-4o</text>
+      <text x="50" y="54" font-size="12" font-weight="800" fill="#1E3A8A">RESEARCHER</text>
+    </g>
+
+    <!-- SECTION WRITER (LLM Node) -->
+    <g transform="translate(420, 60)">
+      <rect width="170" height="85" rx="10" fill="url(#planner-grad)" stroke="#3B82F6" stroke-width="1.5" />
+      <!-- OpenAI Logo -->
+      <g transform="translate(15, 22)" color="#1E3A8A" scale="0.8">
+        <path d="M24 16.2c.3-.6.5-1.2.5-1.9 0-2-1.6-3.6-3.6-3.6-.9 0-1.6.3-2.2.9-.2-.7-.8-1.3-1.5-1.7-1.4-.8-3.2-.8-4.6 0-.7.4-1.3 1-1.5 1.7-.6-.6-1.4-.9-2.2-.9-2 0-3.6 1.6-3.6 3.6 0 .7.2 1.4.6 1.9-.6.3-1 .8-1.4 1.4-.8 1.4-.8 3.2 0 4.6.3.6.8 1.1 1.4 1.4-.3.6-.6 1.2-.6 1.9 0 2 1.6 3.6 3.6 3.6.9 0 1.6-.3 2.2-.9.2.7.8 1.3 1.5 1.7.8.4 1.6.6 2.5.6.8 0 1.6-.2 2.2-.6.7-.4 1.3-1 1.5-1.7.6.6 1.4.9 2.2.9 2 0 3.6-1.6 3.6-3.6 0-.7-.2-1.4-.6-1.9.6-.3 1-.8 1.4-1.4.8-1.4.8-3.2 0-4.6-.3-.6-.8-1.1-1.4-1.4zm-7.4 7.5c-.5.2-1 .4-1.5.4-1.2 0-2.2-.8-2.6-1.8l.1-.1 4.3-2.5c.2-.1.4-.4.4-.7v-5l1.5.9c.7.4 1.1 1.2 1.1 2v5c.1.9-.5 1.6-1.3 1.9zm-5.5-1.5l-4.3-2.5c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.1 0 .4 0 .5 0zm-.7-10.7c.5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8l-.1.1-4.3 2.5c-.2.1-.4.4-.4.7v5l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2zm9.8 3l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.2 0 .3 0 .4 0zm3 7.7l-4.3 2.5c-.2.1-.5.1-.6 0l-4.3-2.5v-5c0-.2.1-.5.4-.6l4.3-2.5c.2-.1.5-.1.6 0l4.3 2.5v5c0 .2-.1.5-.4.6zm-1.4-10.7l4.3 2.5c.7.4 1.1 1.2 1.1 2v5c0 .9-.5 1.6-1.3 2-.5.2-1 .4-1.5 .4-1.2 0-2.2-.8-2.6-1.8v-5c0-.2.1-.5.4-.6l4.3-2.5z" fill="currentColor"/>
+      </g>
+      <text x="50" y="30" font-size="9" font-weight="700" fill="#2563EB">OpenAI GPT-4o</text>
+      <text x="50" y="54" font-size="12" font-weight="800" fill="#1E3A8A">SECTION WRITER</text>
+    </g>
+
+    <!-- Sub-label inside section writer box -->
+    <g transform="translate(180, 160)">
+      <rect width="260" height="28" rx="6" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" />
+      <text x="130" y="18" font-size="10" font-weight="700" fill="#4B5563" text-anchor="middle">GENERATE QUERIES AND SEARCH WEB</text>
+      <!-- Small pointer line -->
+      <line x1="80" y1="0" x2="80" y2="-15" stroke="#9CA3AF" stroke-width="1.5" />
+    </g>
+  </g>
+
+
+  <!-- ================= FORMAT SECTIONS ================= -->
+  <g transform="translate(545, 490)" filter="url(#shadow)">
+    <rect width="200" height="40" rx="8" fill="url(#format-grad)" stroke="#475569" stroke-width="1.5" />
+    <text x="100" y="24" font-size="11" font-weight="800" fill="#1E293B" text-anchor="middle" letter-spacing="1">FORMAT SECTIONS</text>
+  </g>
+
+
+  <!-- ================= PARALLEL EXECUTION OF FINAL SECTION WRITER ================= -->
+
+  <!-- Orange Stacked Containers -->
+  <rect x="410" y="570" width="470" height="135" rx="12" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5" />
+  
+  <g transform="translate(400, 560)" filter="url(#shadow)">
+    <rect width="470" height="135" rx="12" fill="#FFF7ED" stroke="#F97316" stroke-width="2" stroke-dasharray="6,4" />
+    <text x="20" y="28" font-size="11" font-weight="800" fill="#9A3412" letter-spacing="1">PARALLEL EXECUTION OF FINAL SECTION WRITER</text>
+
+    <!-- FINAL SECTION WRITER -->
+    <g transform="translate(135, 45)">
+      <rect width="200" height="70" rx="10" fill="url(#planner-grad)" stroke="#3B82F6" stroke-width="1.5" />
+      <!-- OpenAI Logo -->
+      <g transform="translate(15, 15)" color="#1E3A8A" scale="0.8">
+        <path d="M24 16.2c.3-.6.5-1.2.5-1.9 0-2-1.6-3.6-3.6-3.6-.9 0-1.6.3-2.2.9-.2-.7-.8-1.3-1.5-1.7-1.4-.8-3.2-.8-4.6 0-.7.4-1.3 1-1.5 1.7-.6-.6-1.4-.9-2.2-.9-2 0-3.6 1.6-3.6 3.6 0 .7.2 1.4.6 1.9-.6.3-1 .8-1.4 1.4-.8 1.4-.8 3.2 0 4.6.3.6.8 1.1 1.4 1.4-.3.6-.6 1.2-.6 1.9 0 2 1.6 3.6 3.6 3.6.9 0 1.6-.3 2.2-.9.2.7.8 1.3 1.5 1.7.8.4 1.6.6 2.5.6.8 0 1.6-.2 2.2-.6.7-.4 1.3-1 1.5-1.7.6.6 1.4.9 2.2.9 2 0 3.6-1.6 3.6-3.6 0-.7-.2-1.4-.6-1.9.6-.3 1-.8 1.4-1.4.8-1.4.8-3.2 0-4.6-.3-.6-.8-1.1-1.4-1.4zm-7.4 7.5c-.5.2-1 .4-1.5.4-1.2 0-2.2-.8-2.6-1.8l.1-.1 4.3-2.5c.2-.1.4-.4.4-.7v-5l1.5.9c.7.4 1.1 1.2 1.1 2v5c.1.9-.5 1.6-1.3 1.9zm-5.5-1.5l-4.3-2.5c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.1 0 .4 0 .5 0zm-.7-10.7c.5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8l-.1.1-4.3 2.5c-.2.1-.4.4-.4.7v5l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2zm9.8 3l-1.5-.9c-.7-.4-1.1-1.2-1.1-2v-5c0-.9.5-1.6 1.3-2 .5-.2 1-.4 1.5-.4 1.2 0 2.2.8 2.6 1.8v5c0 .2-.1.5-.4.6l-4.3 2.5c.2 0 .3 0 .4 0zm3 7.7l-4.3 2.5c-.2.1-.5.1-.6 0l-4.3-2.5v-5c0-.2.1-.5.4-.6l4.3-2.5c.2-.1.5-.1.6 0l4.3 2.5v5c0 .2-.1.5-.4.6zm-1.4-10.7l4.3 2.5c.7.4 1.1 1.2 1.1 2v5c0 .9-.5 1.6-1.3 2-.5.2-1 .4-1.5 .4-1.2 0-2.2-.8-2.6-1.8v-5c0-.2.1-.5.4-.6l4.3-2.5z" fill="currentColor"/>
+      </g>
+      <text x="50" y="26" font-size="9" font-weight="700" fill="#2563EB">OpenAI GPT-4o</text>
+      <text x="50" y="46" font-size="11" font-weight="800" fill="#1E3A8A">FINAL SECTION WRITER</text>
+    </g>
+  </g>
+
+
+  <!-- ================= RIGHT COLUMN (SECTIONS COMPILATION POOL) ================= -->
+  
+  <g transform="translate(1070, 110)">
+    <!-- Yellow dashed box -->
+    <rect width="130" height="465" rx="12" fill="#FEFDF0" stroke="#EAB308" stroke-dasharray="6,4" stroke-width="2" filter="url(#shadow)" />
+    
+    <!-- Introduction (Doc) -->
+    <g transform="translate(15, 25)">
+      <rect width="100" height="110" rx="8" fill="#FFFFFF" stroke="#F97316" stroke-width="1.5" />
+      <g transform="translate(38, 15)">
+        <path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v25a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" fill="#FFF7ED" stroke="#F97316" stroke-width="1" />
+        <line x1="5" y1="8" x2="19" y2="8" stroke="#FDBA74" stroke-width="1.5" />
+        <line x1="5" y1="14" x2="19" y2="14" stroke="#FDBA74" stroke-width="1.5" />
+        <line x1="5" y1="20" x2="15" y2="20" stroke="#FDBA74" stroke-width="1.5" />
+      </g>
+      <text x="50" y="80" font-size="9" font-weight="800" fill="#C2410C" text-anchor="middle">INTRODUCTION</text>
+    </g>
+
+    <!-- Sections (Doc) -->
+    <g transform="translate(15, 165)">
+      <rect width="100" height="110" rx="8" fill="#FFFFFF" stroke="#22C55E" stroke-width="1.5" />
+      <g transform="translate(38, 15)">
+        <path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v25a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" fill="#F0FDF4" stroke="#22C55E" stroke-width="1" />
+        <line x1="5" y1="8" x2="19" y2="8" stroke="#86EFAC" stroke-width="1.5" />
+        <line x1="5" y1="14" x2="19" y2="14" stroke="#86EFAC" stroke-width="1.5" />
+        <line x1="5" y1="20" x2="15" y2="20" stroke="#86EFAC" stroke-width="1.5" />
+      </g>
+      <text x="50" y="80" font-size="9" font-weight="800" fill="#15803D" text-anchor="middle">SECTIONS</text>
+    </g>
+
+    <!-- Conclusion (Doc) -->
+    <g transform="translate(15, 305)">
+      <rect width="100" height="110" rx="8" fill="#FFFFFF" stroke="#F97316" stroke-width="1.5" />
+      <g transform="translate(38, 15)">
+        <path d="M0 2a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v25a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z" fill="#FFF7ED" stroke="#F97316" stroke-width="1" />
+        <line x1="5" y1="8" x2="19" y2="8" stroke="#FDBA74" stroke-width="1.5" />
+        <line x1="5" y1="14" x2="19" y2="14" stroke="#FDBA74" stroke-width="1.5" />
+        <line x1="5" y1="20" x2="15" y2="20" stroke="#FDBA74" stroke-width="1.5" />
+      </g>
+      <text x="50" y="80" font-size="9" font-weight="800" fill="#C2410C" text-anchor="middle">CONCLUSION</text>
+    </g>
+  </g>
+
+
+  <!-- ==================== DYNAMIC GRAPH FLOWS & CONNECTORS ==================== -->
+
+  <!-- Top Inputs to Report Planner -->
+  <path d="M 460,95 L 460,127" fill="none" stroke="#EF4444" stroke-width="2" marker-end="url(#arrow-gray)" />
+
+  <!-- Report Planner <-> Web Search Tool (Top Bidirectional) -->
+  <path d="M 560,180 L 582,180" fill="none" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <path d="M 590,180 L 568,180" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-gray)" />
+
+  <!-- Report Planner -> Custom Sections Template -->
+  <path d="M 340,180 Q 320,180 320,150 T 305,150" fill="none" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)" />
+
+  <!-- Middle Web Search <-> Researcher (Inside Green Container) -->
+  <path d="M 470,392 L 512,392" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <path d="M 520,392 L 488,392" fill="none" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-gray)" />
+
+  <!-- Researcher -> Section Writer (Inside Green Container) -->
+  <path d="M 690,392 L 752,392" fill="none" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrow-blue)" />
+
+  <!-- Custom Template Section 1 -> Parallel Section Writer Container -->
+  <path d="M 280,265 L 332,265" fill="none" stroke="#22C55E" stroke-width="2" marker-end="url(#arrow-green)" />
+  
+  <!-- Custom Template Section 2 -> Parallel Section Writer Container -->
+  <path d="M 280,325 L 332,325" fill="none" stroke="#22C55E" stroke-width="2" marker-end="url(#arrow-green)" />
+
+  <!-- Parallel Section Writer Container -> Format Sections -->
+  <path d="M 645,460 L 645,482" fill="none" stroke="#22C55E" stroke-width="2.5" marker-end="url(#arrow-green)" />
+
+  <!-- Format Sections -> Parallel Final Section Writer Container -->
+  <path d="M 645,530 L 645,552" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow-gray)" />
+
+
+  <!-- ==================== LEFT SIDE BYPASS ARROWS (INTRO & CONCLUSION) ==================== -->
+  
+  <!-- Introduction bypass line: goes left out of box, down to bottom container, then right -->
+  <path d="M 40,205 L 15,205 L 15,640 L 392,640" fill="none" stroke="#F97316" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-orange)" />
+  
+  <!-- Conclusion bypass line: goes left out of box, down to bottom container, then right -->
+  <path d="M 40,435 L 8,435 L 8,670 L 392,670" fill="none" stroke="#F97316" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow-orange)" />
+
+
+  <!-- ==================== RIGHT SIDE FEEDBACK & COMPILE ARROWS ==================== -->
+
+  <!-- Final Section Writer -> Individual Sections (Right yellow box) -->
+  <!-- Main output trunk line from bottom container going right -->
+  <path d="M 870,627 L 970,627 L 970,310" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" />
+  
+  <!-- Branch 1 to Introduction (Orange doc) -->
+  <path d="M 970,190 L 1075,190" fill="none" stroke="#F97316" stroke-width="2" marker-end="url(#arrow-orange)" />
+  
+  <!-- Branch 2 to Sections (Green doc) -->
+  <path d="M 970,310 L 1075,310" fill="none" stroke="#22C55E" stroke-width="2" marker-end="url(#arrow-green)" />
+
+  <!-- Branch 3 to Conclusion (Orange doc) -->
+  <path d="M 970,450 L 1075,450" fill="none" stroke="#F97316" stroke-width="2" marker-end="url(#arrow-orange)" />
+
+  <!-- Right individual sections box -> Compile Final Report -->
+  <path d="M 1070,342 L 950,342 L 950,225" fill="none" stroke="#EAB308" stroke-width="6" stroke-linejoin="round" opacity="0.1" />
+  <path d="M 1070,342 L 1025,342 L 1025,210 L 1045,210" fill="none" stroke="#EAB308" stroke-width="2.5" stroke-linejoin="round" />
+  <!-- We draw clean connections from right box to Compile Final Report -->
+  <!-- Top Document to Compiler -->
+  <path d="M 1070,190 L 1045,190 Q 1040,190 1040,180 L 1040,180 L 1040,180" fill="none" stroke="#EAB308" stroke-width="2" />
+  
+  <!-- Central yellow arrow pointing into Compile Final Report -->
+  <path d="M 1070,290 L 1050,290 L 1050,180 L 1042,180" fill="none" stroke="#EAB308" stroke-width="2" />
+  <!-- Let's replace with a single clean thick line indicating compile flow -->
+  <path d="M 1070,340 L 1050,340 L 1050,210 L 1040,210" fill="none" stroke="#EAB308" stroke-width="2" />
+
+  <!-- Standard clean compiling indicators -->
+  <path d="M 1070,220 L 1045,220" fill="none" stroke="#EAB308" stroke-width="2" />
+  <path d="M 1070,300 L 1045,300" fill="none" stroke="#EAB308" stroke-width="2" />
+  
+  <!-- Main yellow arrow from right container to Compile Final Report -->
+  <path d="M 1070,260 L 1055,260 L 1055,180 L 1045,180" fill="none" stroke="#EAB308" stroke-width="2" />
+  
+  <!-- Better visual representation: A unified bus arrow from the right box to Compile Final Report -->
+  <path d="M 1070,290 C 1045,290 1045,180 1045,180" fill="none" stroke="#EAB308" stroke-width="2" />
+  <!-- Direct horizontal arrow from compiling stack block to Compile Final Report -->
+  <path d="M 1070,240 Q 1050,240 1050,180 L 1042,180" fill="none" stroke="#EAB308" stroke-width="2" />
+
+  <!-- Let's draw the final inputs to the compiler: -->
+  <!-- Unified yellow bus going left to compiler -->
+  <path d="M 1070,260 L 1050,260 L 1050,180 L 1045,180" fill="none" stroke="#EAB308" stroke-width="2.5" />
+  <!-- Let's add a large yellow arrowhead pointing left to Compile Final Report box -->
+  <path d="M 1070,260 L 1050,260 L 1050,180 L 1042,180" fill="none" stroke="#EAB308" stroke-width="2" />
+  
+  <!-- Let's match the original diagram's right side arrows: -->
+  <!-- In the original diagram:
+       A green line goes from Section Writer output up to the 'Sections' block on the right.
+       A yellow line goes from 'Final Section Writer' output to 'Introduction', another yellow line to 'Conclusion'.
+       Then a large yellow arrow points left from the right container to 'Compile Final Report'.
+       Then another large yellow arrow points left from 'Compile Final Report' to 'Final Report'. -->
+  <!-- Let's draw the large yellow arrows: -->
+  <g transform="translate(1040, 165)">
+    <path d="M 15,15 L -10,15" fill="none" stroke="#EAB308" stroke-width="12" stroke-linecap="round" />
+    <path d="M -5,15 L -15,15" fill="none" stroke="#EAB308" stroke-width="12" marker-end="url(#arrow-yellow)" />
+  </g>
+  <g transform="translate(850, 165)">
+    <path d="M 10,15 L -10,15" fill="none" stroke="#EAB308" stroke-width="12" stroke-linecap="round" />
+    <path d="M -2,15 L -12,15" fill="none" stroke="#EAB308" stroke-width="12" marker-end="url(#arrow-yellow)" />
+  </g>
+
+</svg>
