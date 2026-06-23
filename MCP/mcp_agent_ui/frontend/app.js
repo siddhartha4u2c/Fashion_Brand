@@ -28,7 +28,7 @@ function closeModal() {
     modal.classList.remove("active");
     addServerForm.reset();
     // Keep default inputs populated
-    document.getElementById("server-url").value = "https://salary-mcp-prediction.fastmcp.app/mcp";
+    document.getElementById("server-url").value = "https://SalaryPredictionMCPServer.fastmcp.app/mcp";
     document.getElementById("server-key").value = "fmcp_F4FROEZkJmNN70pr5OcOg0i-l7VO_J_zAtnzLyMfHhY";
 }
 
