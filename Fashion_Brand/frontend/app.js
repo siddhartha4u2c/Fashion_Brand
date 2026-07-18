@@ -3,7 +3,7 @@
    Handles: catalog load, category filters, chat, modal
    ══════════════════════════════════════════════════════════ */
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://fashion-brand-fdwh.onrender.com";
 
 // ── DOM refs ─────────────────────────────────────────────────
 const productGrid    = document.getElementById("product-grid");
